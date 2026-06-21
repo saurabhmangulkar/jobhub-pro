@@ -1,36 +1,53 @@
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div className="container">
+    const handleLogout = () => {
 
-        <Link className="navbar-brand" to="/">
-          JobHub
-        </Link>
+        localStorage.clear();
 
-        <div className="navbar-nav ms-auto">
+        window.location.href = "/login";
+    };
+    return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div className="container">
 
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
+                <Link className="navbar-brand" to="/">
+                    JobHub
+                </Link>
 
-          <Link className="nav-link" to="/jobs">
-            Jobs
-          </Link>
+                <div className="navbar-nav ms-auto">
 
-          <Link className="nav-link" to="/login">
-            Login
-          </Link>
+                    <Link className="nav-link" to="/">
+                        Home
+                    </Link>
 
-          <Link className="nav-link" to="/register">
-            Register
-          </Link>
+                    <Link className="nav-link" to="/jobs">
+                        Jobs
+                    </Link>
 
-        </div>
-      </div>
-    </nav>
-  );
+                    <Link className="nav-link" to="/login">
+                        Login
+                    </Link>
+
+                    <Link className="nav-link" to="/register">
+                        Register
+                    </Link>
+                    <Link
+                        className="nav-link"
+                        to="/my-applications"
+                    >
+                        My Applications
+                    </Link>
+                    <button
+                        className="btn btn-danger ms-3"
+                        onClick={handleLogout}
+                    >
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </nav>
+    );
 }
 
 export default Navbar;

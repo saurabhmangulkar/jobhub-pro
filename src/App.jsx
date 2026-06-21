@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Jobs from "./pages/Jobs";
 import Navbar from "./components/Navbar";
+import MyApplications from "./pages/MyApplications";
 function App() {
   return (
     <>
@@ -19,7 +20,12 @@ function App() {
           path="/jobs/:id"
           element={<JobDetails />}
         />
+         <Route
+        path="/my-applications"
+        element={<MyApplications />}
+      />
       </Routes>
+     
 
     </>
   );
